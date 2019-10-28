@@ -16,52 +16,61 @@
   <link rel="preload" href="fonts/raleway-cyrillic-900.woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="fonts/raleway-v14-latin-700.woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="fonts/raleway-v14-latin-900.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/circe-regular.woff2" as="font" crossorigin="anonymous">
 </head>
 <body class="page">
-  <header class="header wrapper">
-    <div class="header__logo"><img src="img/logo@1x.png" alt="Логотип компании МонтСтрой" width="141" height="60"></div>
-    <nav class="header__menu menu menu--menu-opened menu--no-js">
-      <button class="button menu__toggler" type="button"><span> Открыть меню</span></button>
-      <ul class="menu__list">
-        <li class="menu__item"><a href="#" class="menu__link menu__link--main">Главная</a></li>
-        <li class="menu__item"><a href="#" class="menu__link">Услуги</a></li>
-        <li class="menu__item"><a href="#" class="menu__link">Проекты</a></li>
-        <li class="menu__item"><a href="#" class="menu__link">Партнеры</a></li>
-        <li class="menu__item"><a href="#" class="menu__link">Контакты</a></li>
-      </ul>
-    </nav>
-    <div>
-      <ul class="header__contacts-list">
-        <li class="header__contacts-tel"><a href="tel:+74954526723">+7&nbsp;(495)&nbsp;452-67-23</a></li>
-        <li class="header__contacts-contact"><a href="#" class="button">Обратная связь</a></li>
-      </ul>
+  <header class="header">
+    <div class="wrapper header__wrapper">
+      <div class="header__logo"><img src="img/logo@1x.png" alt="Логотип компании МонтСтрой" width="141" height="60"></div>
+      <nav class="header__menu menu menu--menu-opened menu--no-js">
+        <button class="button menu__toggler" type="button"><span> Открыть меню</span></button>
+        <ul class="menu__list">
+          <li class="menu__item"><a href="#" class="menu__link menu__link--main">Главная</a></li>
+          <li class="menu__item"><a href="#" class="menu__link">Услуги</a></li>
+          <li class="menu__item"><a href="#" class="menu__link">Проекты</a></li>
+          <li class="menu__item"><a href="#" class="menu__link">Партнеры</a></li>
+          <li class="menu__item"><a href="#" class="menu__link">Контакты</a></li>
+        </ul>
+      </nav>
+      <div>
+        <ul class="header__contacts-list">
+          <li class="header__contacts-tel"><a href="tel:+74954526723">+7&nbsp;(495)&nbsp;452-67-23</a></li>
+          <li class="header__contacts-contact"><a href="#consultation" class="button">Обратная связь</a></li>
+        </ul>
+      </div>
     </div>
   </header>
   <main class="main">
     <header class="main-header">
       <div class="wrapper main-header__wrapper">
-        <div class="red" style="width: 100vw; height: 50px; position: relative; left: 50%; margin-left: -50vw; background-color: pink;"></div>
         <h1>Cтроительно-монтажные работы</h1>
-        <p id="description" class="main-header__description">Компания ЗАО&nbsp;«НCП «МонтCтрой» успешно работает на российском рынке с&nbsp;<b>1992</b>&nbsp;года, и&nbsp;за это время зарекомендовала себя как ведущий разработчик качественных систем установок для&nbsp;предприятий, выполняет полный комплекс строительно-монтажных и&nbsp;пуско-наладочных работ по&nbsp;электроснабжению зданий и&nbsp;сооружений.</p>
-        <a href="#" class="main-header__button button">Наши услуги</a>
-        <a href="#" class="main-header__button button">Связаться с нами</a>
+        <p class="main-header__description description">Компания ЗАО&nbsp;«НCП «МонтCтрой» успешно работает на российском рынке с&nbsp;<b>1992</b>&nbsp;года, и&nbsp;за это время зарекомендовала себя как ведущий разработчик качественных систем установок для&nbsp;предприятий, выполняет полный комплекс строительно-монтажных и&nbsp;пуско-наладочных работ по&nbsp;электроснабжению зданий и&nbsp;сооружений.</p>
+        <div class="main-header__buttons-container">
+          <a href="#services" class="main-header__button--services main-header__button  button">Наши услуги</a>
+          <a href="#consultation" class="main-header__button main-header__button--consultation  button">Связаться с нами</a>
+        </div>
         <section class="main-header__advantages advantages">
           <h2 class="visually-hidden">Наши преимушества</h2>
           <ul class="advantages__list">
             <li class="advantages__item advantages__item--quality">
               <svg width="62" height="64"><use xlink:href="img/sprite_auto.svg#icon-like"></use></svg>
               <p>Гарантированное высокое качество продукции</p></li>
-            <li class="advantages__item advantages__item--deadlines">
+            <li class="advantages__item advantages__item--deadlines advantages__item--selected">
               <svg width="74" height="49"><use xlink:href="img/sprite_auto.svg#icon-handshake"></use></svg>
               <p>Исполнение всех сроков&nbsp;и&nbsp;обязательств</p></li>
             <li class="advantages__item advantages__item--settings">
               <svg width="70" height="69"><use xlink:href="img/sprite_auto.svg#icon-settings"></use></svg>
               <p>Собственная производственная база</p></li>
           </ul>
+          <div class="advantages__buttons">
+            <button type="button" class="button" id="1"><span class="visually-hidden">Первый слайд</span></button>
+            <button type="button" class="button button--selected" id="2"><span class="visually-hidden">Второй слайд</span></button>
+            <button type="button" class="button" id="3"><span class="visually-hidden">Третий слайд</span></button>
+          </div>
         </section>
       </div>
     </header>
-    <section class="services wrapper">
+    <section id="services" class="services wrapper">
       <h2>Услуги</h2>
       <ul class="services__list">
         <li class="services__item">
@@ -177,75 +186,78 @@
     </section>
   </main>
   <footer class="footer">
-    <div class="footer__contacts">
-      <h2>Контакты</h2>
-      <div class="footer__map map"></div>
-      <section class="footer__form">
-        <h3>Свяжитесь с нами</h3>
-        <form action="https://echo.htmlacademy.ru" method="POST" class="form">
-          <div class="form__field form__field--text">
-            <label for="customer-name" title="Ваше имя"></label>
-            <input id="customer-name" placeholder="Имя" type="text" name="name" required="" autofocus="">
-          </div>
-          <div class="form__field form__field--tel">
-            <label for="customer-phone" title="Ваш телефон"></label>
-            <input id="customer-phone" placeholder="Телефон" type="tel" name="phone" required="">
-          </div>
-          <div class="form__field form__field--email">
-            <label for="customer-email" title="Ваш электронный адрес"></label>
-            <input id="customer-email" placeholder="E-mail" type="email" name="email" required="">
+    <div class="footer__wrapper wrapper">
+      <div class="footer__contacts">
+        <h2>Контакты</h2>
+        <div class="footer__map"></div>
+        <section id="consultation" class="footer__form">
+          <h3>Свяжитесь с нами</h3>
+          <form action="https://echo.htmlacademy.ru" method="POST" class="form">
+            <div class="form__field form__field--text">
+              <label for="customer-name" title="Ваше имя"></label>
+              <input id="customer-name" placeholder="Имя" type="text" name="name" required="" autofocus="">
             </div>
-          <div class="form__field form__field--textarea">
-            <label for="customer-messsage" title="Ваше сообщение"></label>
-            <textarea id="customer-messsage" placeholder="Сообщение" name="messsage"></textarea>
-          </div>
-          <div>
-            <p>Заполняя форму на сайте, вы соглашаетесь с нашей</p>
-            <a href="#">Политикой конфиденциальности</a>
-          </div>
-          <button type="submit">Отправить</button>
-        </form>
-      </section>
-      <div class="footer__contacts-list">
-        <p>Варшавское шоссе, д, 118, к.1 Бизнес-центр «ВАРШАВКА Sky»</p>
-        <p>zao@montstroy.ru</p>
-        <p><a href="tel:+74954526723">+7 (495) 452-67-23</a>Ежедневно с 9:00 до 18:00</p>
+            <div class="form__field form__field--tel">
+              <label for="customer-phone" title="Ваш телефон"></label>
+              <input id="customer-phone" placeholder="Телефон" type="tel" name="phone" required="">
+            </div>
+            <div class="form__field form__field--email">
+              <label for="customer-email" title="Ваш электронный адрес"></label>
+              <input id="customer-email" placeholder="E-mail" type="email" name="email" required="">
+              </div>
+            <div class="form__field form__field--textarea">
+              <label for="customer-messsage" title="Ваше сообщение"></label>
+              <textarea id="customer-messsage" placeholder="Сообщение" name="messsage"></textarea>
+            </div>
+            <div class="form__conditions">
+              <p>Заполняя форму на сайте, вы соглашаетесь с нашей</p>
+              <a href="#">Политикой конфиденциальности</a>
+            </div>
+            <button type="submit">Отправить</button>
+          </form>
+        </section>
+        <div class="footer__contacts-list contacts-list">
+          <p>Варшавское шоссе, д, 118, к.1 Бизнес-центр «ВАРШАВКА Sky»</p>
+          <p>zao@montstroy.ru</p>
+          <p><a href="tel:+74954526723">+7 (495) 452-67-23</a>Ежедневно с 9:00 до 18:00</p>
+        </div>
       </div>
-    </div>
-    <div class="footer__container">
-      <div class="footer__logo">
-        <img src="img/logo@1x.png" alt="Логотип компании МонтСтрой" width="141" height="60">
-        <p>ЗАО «НCП «МонтCтрой»</p>
+      <div class="footer__container">
+        <div class="footer__logo">
+          <img src="img/logo@1x.png" alt="Логотип компании МонтСтрой" width="141" height="60">
+          <p>ЗАО «НCП «МонтCтрой»</p>
+        </div>
+        <nav class="footer__menu menu menu--dark menu--menu-opened menu--no-js">
+          <ul class="menu__list">
+            <li class="menu__item"><a href="#" class="menu__link menu__link--main">Главная</a></li>
+            <li class="menu__item"><a href="#" class="menu__link">Услуги</a></li>
+            <li class="menu__item"><a href="#" class="menu__link">Проекты</a></li>
+            <li class="menu__item"><a href="#" class="menu__link">Партнеры</a></li>
+            <li class="menu__item"><a href="#" class="menu__link">Контакты</a></li>
+          </ul>
+        </nav>
+        <section class="footer__social social">
+          <h3 class="visually-hidden">Мы в соцсетях</h3>
+          <ul class="social__list">
+            <li class="social__item">
+              <a href="#" class="social__link social__link--vk"></a>
+              <span class="visually-hidden">ВКонтакте</span>
+            </li>
+            <li class="social__item">
+              <a href="#" class="social__link social__link--tw"></a>
+              <span class="visually-hidden">Твиттер</span>
+            </li>
+            <li class="social__item">
+              <a href="#" class="social__link social__link--fb"></a>
+              <span class="visually-hidden">Фейсбук</span>
+            </li>
+          </ul>
+        </section>
       </div>
-      <nav class="footer__menu menu menu--dark menu--menu-opened menu--no-js">
-        <ul class="menu__list">
-          <li class="menu__item"><a href="#" class="menu__link menu__link--main">Главная</a></li>
-          <li class="menu__item"><a href="#" class="menu__link">Услуги</a></li>
-          <li class="menu__item"><a href="#" class="menu__link">Проекты</a></li>
-          <li class="menu__item"><a href="#" class="menu__link">Партнеры</a></li>
-          <li class="menu__item"><a href="#" class="menu__link">Контакты</a></li>
-        </ul>
-      </nav>
-      <section class="footer__social social">
-        <h3 class="visually-hidden">Мы в соцсетях</h3>
-        <ul class="social__list">
-          <li class="social__item">
-            <a href="#" class="social__link social__link--vk"></a>
-            <span class="visually-hidden">ВКонтакте</span>
-          </li>
-          <li class="social__item">
-            <a href="#" class="social__link social__link--tw"></a>
-            <span class="visually-hidden">Твиттер</span>
-          </li>
-          <li class="social__item">
-            <a href="#" class="social__link social__link--fb"></a>
-            <span class="visually-hidden">Фейсбук</span>
-          </li>
-        </ul>
-      </section>
+      <p class="footer__copyright">1992-2018 ©  ЗАО “НСП ”МонтСтрой”. Все права защищены</p>
     </div>
-    <p class="footer__copyright">1992-2018 ©  ЗАО “НСП ”МонтСтрой”. Все права защищены</p>
   </footer>
+  <script src="js/libs.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
