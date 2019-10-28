@@ -139,7 +139,7 @@
     if (descriptionElem && buttonsElem && advantagesElem) {
       if (window.matchMedia('(max-width: 767px)').matches && oldParentDiv.contains(descriptionElem)) {
         // Перемещаем блок
-        newParentDiv.insertBefore(advantagesElem, descriptionElem);
+        newParentDiv.insertBefore(descriptionElem, advantagesElem);
         // advantagesElem.before(descriptionElem);
         // Меняем классы
         descriptionElem.classList.remove('main-header__description');
@@ -149,7 +149,7 @@
       } else if (window.matchMedia('(min-width: 768px)').matches && newParentDiv.contains(descriptionElem)) {
         // Перемещаем блок
         // buttonsElem.before(descriptionElem);
-        oldParentDiv.insertBefore(advantagesElem, buttonsElem);
+        oldParentDiv.insertBefore(descriptionElem, buttonsElem);
         // Меняем классы
         descriptionElem.classList.remove('wrapper');
         descriptionElem.classList.add('main-header__description');
