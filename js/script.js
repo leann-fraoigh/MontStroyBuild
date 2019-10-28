@@ -158,9 +158,7 @@
   var moveDescription = function () {
     var descriptionElem = document.querySelector('.description');
     var buttonsElem = document.querySelector('.main-header__buttons-container');
-    // var advantagesElem = document.querySelector('.advantages');
     var headerElem = document.querySelector('.main-header');
-    // var newParentDiv = advantagesElem.parentNode;
     var oldParentDiv = buttonsElem.parentNode;
     var newParentDiv = document.querySelector('.main');
 
@@ -171,7 +169,6 @@
       if (window.matchMedia('(max-width: 767px)').matches && oldParentDiv.contains(descriptionElem)) {
         // Перемещаем блок
         newParentDiv.insertBefore(descriptionElem, headerElem.nextSibling);
-        // advantagesElem.before(descriptionElem);
         // Меняем классы
         descriptionElem.classList.remove('main-header__description');
         descriptionElem.classList.add('wrapper');
@@ -224,4 +221,3 @@
     servicesLink.addEventListener('click', handleAnchorClick);
   }
 })();
-
