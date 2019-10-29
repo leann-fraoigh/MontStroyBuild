@@ -221,3 +221,62 @@
     servicesLink.addEventListener('click', handleAnchorClick);
   }
 })();
+
+// ОБРЕЗКА КОНЦА СТРОКИ
+(function () {
+  var allLinks = document.querySelectorAll('.services__sublist a');
+
+  if (allLinks) {
+    for (var i = 0; i < allLinks.length; i++) {
+      var link = allLinks[i];
+      link.innerHTML = link.innerHTML.replace(/.{1}$/, '<span>$&</span>');
+    }
+  }
+})();
+
+
+// АККОРДЕОНЫ
+(function () {
+  var Enter = 13;
+  var allButtons = document.querySelectorAll('.services__item button');
+  var allElements = document.querySelectorAll('.services__item');
+
+  if (allButtons && allElements) {
+
+    var closeAll = function () {
+      for (var i = 0; i < allElements.length; i++) {
+        var element = allElements[i];
+        if (element.classList.contains('services__item--opened')) {
+          element.classList.remove('services__item--opened');
+        }
+      }
+    };
+
+    // Open if close target content
+    var toggleContent = function (evt) {
+      evt.preventDefault();
+      // Close if opened. Else open anything that is openes and open target
+      if (evt.target.parentNode.classList.contains('services__item--opened')) {
+        closeAll();
+      } else {
+        closeAll();
+        evt.target.parentNode.classList.add('services__item--opened');
+      }
+    };
+
+    // Add eventListeners to all buttons
+    for (var i = 0; i < allButtons.length; i++) {
+      var button = allButtons[i];
+      button.addEventListener('click', function (evt) {
+        toggleContent(evt);
+      });
+      button.addEventListener('keydown', function (evt) {
+        if (evt.keyCode === Enter) {
+          toggleContent(evt);
+        }
+      });
+    }
+  }
+})();
+
+
