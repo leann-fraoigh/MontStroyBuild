@@ -289,6 +289,13 @@
 // SWIPER
 (function () {
   var swiper;
+
+  var destroySwiper = function () {
+    swiper.destroy(true, true);
+    swiper = undefined;
+  };
+
+
   var initSwiperM = function () {
     swiper = new Swiper('.swiper-container', {
       effect: 'coverflow',
@@ -302,12 +309,12 @@
         // loop: true,
         rotate: 0,
         stretch: 0.22,
-        depth: 100,
+        depth: 150,
         modifier: 1,
         slideShadows: false,
         pagination: {
           el: '.swiper-pagination',
-          dynamicBullets: true
+          dynamicBullets: true,
           // clickable: true,
         },
       }
@@ -335,15 +342,10 @@
       spaceBetween: 30,
       pagination: {
         el: '.swiper-pagination',
-        dynamicBullets: true
+        dynamicBullets: true,
         // clickable: true,
       },
     });
-  };
-
-  var destroySwiper = function () {
-    swiper.destroy(true, true);
-    swiper = undefined;
   };
 
   var changeSwiper = function () {
