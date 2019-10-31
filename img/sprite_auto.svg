@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-arrow-right"><path fill-rule="evenodd" d="M16 3l-4 3V4H0V2h12V0l4 3z"/></symbol><symbol id="icon-envelop">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-arrow-left">
+<path fill-rule="evenodd" d="M16.000,4.000 L4.000,4.000 L4.000,6.000 L0.000,3.000 L4.000,-0.000 L4.000,2.000 L16.000,2.000 L16.000,4.000 Z"/>
+</symbol><symbol id="icon-arrow-right"><path fill-rule="evenodd" d="M16 3l-4 3V4H0V2h12V0l4 3z"/></symbol><symbol id="icon-envelop">
     <!-- <defs>
         <filter id="a">
             <feFlood flood-opacity="1" result="floodOut"/>

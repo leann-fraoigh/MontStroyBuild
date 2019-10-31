@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="Description" content="Производим полный комплекс работ по электроснабжению зданий и сооружений.">
   <title>МонтСтрой</title>
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
   <link rel="stylesheet" href="css/style.min.css">
   <!-- Шрифты -->
   <link rel="preload" href="fonts/roboto-v20-cyrillic_latin-500.woff2" as="font" crossorigin="anonymous">
@@ -186,12 +188,24 @@
     </section>
     <section id="partners" class="partners wrapper">
       <h2>Партнеры</h2>
-      <ul class="partners__list">
-        <li class="partners__item partners__item--ava"><a href="#" class="partners__link"><span class="visually-hidden">AVA Company</span></a></li>
-        <li class="partners__item partners__item--mirror"><a href="#" class="partners__link"><span class="visually-hidden">Mirror</span></a></li>
-        <li class="partners__item partners__item--shield"><a href="#" class="partners__link"><span class="visually-hidden">Shield</span></a></li>
-        <li class="partners__item partners__item--ntf"><a href="#" class="partners__link"><span class="visually-hidden">ЗАО НТФ Теплодомэнерг</span></a></li>
-      </ul>
+      <div class="partners__container swiper-container">
+        <!-- <divpartners__list-buttons> -->
+          <button class="partners__list-button button" type="button"><svg width="16" height="8"><use xlink:href="img/sprite_auto.svg#icon-arrow-left"></use></svg><span class="visually-hidden">Подробнее</span><span class="visually-hidden">Назад</span></button>
+          <button class="partners__list-button button" type="button"><svg width="16" height="8"><use xlink:href="img/sprite_auto.svg#icon-arrow-right"></use></svg><span class="visually-hidden">Подробнее</span><span class="visually-hidden">Вперед</span></button>
+        <!-- </div> -->
+        <ul class="partners__list swiper-wrapper">
+          <li class="partners__item swiper-slide partners__item--ava"><a href="#" class="partners__link"><span class="visually-hidden">AVA Company</span></a></li>
+          <li class="partners__item swiper-slide partners__item--mirror"><a href="#" class="partners__link"><span class="visually-hidden">Mirror</span></a></li>
+          <li class="partners__item swiper-slide partners__item--shield"><a href="#" class="partners__link"><span class="visually-hidden">Shield</span></a></li>
+          <li class="partners__item swiper-slide partners__item--ntf"><a href="#" class="partners__link"><span class="visually-hidden">ЗАО НТФ Теплодомэнерг</span></a></li>
+        </ul>
+          <div class="partners__pagination swiper-pagination">
+            <!-- <button type="button" class="button" id="1"><span class="visually-hidden">Первый слайд</span></button>
+            <button type="button" class="button button--selected" id="2"><span class="visually-hidden">Второй слайд</span></button>
+            <button type="button" class="button" id="3"><span class="visually-hidden">Третий слайд</span></button> -->
+          </div>
+        </div>
+      
     </section>
   </main>
   <footer class="footer">
@@ -243,7 +257,6 @@
           <p>ЗАО «НCП «МонтCтрой»</p>
         </div>
         <ul class="footer__menu">
-          <li><a href="#">Главная</a></li>
           <li><a href="#">Услуги</a></li>
           <li><a href="#">Проекты</a></li>
           <li><a href="#">Партнеры</a></li>
@@ -254,28 +267,29 @@
           <ul class="social__list">
             <li class="social__item">
               <a href="#" class="social__link social__link--vk">
-                <svg width="35" height=""><use xlink:href="img/sprite_auto.svg#icon-vk"></use></svg>
+                <svg width="35" height="20"><use xlink:href="img/sprite_auto.svg#icon-vk"></use></svg>
               </a>
               <span class="visually-hidden">ВКонтакте</span>
             </li>
             <li class="social__item social__item--tw">
               <a href="#" class="social__link social__link--tw">
-                <svg width="27" height=""><use xlink:href="img/sprite_auto.svg#icon-tw"></use></svg>
+                <svg width="27" height="18"><use xlink:href="img/sprite_auto.svg#icon-tw"></use></svg>
               </a>
               <span class="visually-hidden">Твиттер</span>
             </li>
             <li class="social__item social__item--fb">
               <a href="#" class="social__link social__link--fb">
-                <svg width="12" height=""><use xlink:href="img/sprite_auto.svg#icon-fb"></use></svg>
+                <svg width="12" height="26"><use xlink:href="img/sprite_auto.svg#icon-fb"></use></svg>
               </a>
               <span class="visually-hidden">Фейсбук</span>
             </li>
           </ul>
         </section>
       </div>
-      <p class="footer__copyright">1992-2018 ©  ЗАО&nbsp;“НСП ”МонтСтрой”. Все права защищены</p>
+      <p class="footer__copyright"><span>1992-2018 ©  ЗАО&nbsp;“НСП ”МонтСтрой”. Все права защищены</span></p>
     </div>
   </footer>
+  <script src="https://unpkg.com/swiper/js/swiper.js"></script>
   <script src="js/script.js"></script>
   <script src="js/libs.js"></script>
 </body>

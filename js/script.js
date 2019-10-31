@@ -1,3 +1,10 @@
+/* eslint-disable no-console */
+/* eslint-disable no-alert */
+/* eslint-disable no-shadow */
+/* eslint-disable consistent-return */
+/* eslint-disable no-undefined */
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 'use strict';
 
 // МЕНЮ
@@ -279,4 +286,115 @@
   }
 })();
 
+// SWIPER
+(function () {
+  var swiper;
+  var initSwiperM = function () {
+    swiper = new Swiper('.swiper-container', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        // visibilityFullFit: true,
+        // cssWidthAndHeight: true,
+        // autoResize: false,
+        // loop: true,
+        rotate: 0,
+        stretch: 0.22,
+        depth: 100,
+        modifier: 1,
+        slideShadows: false,
+        pagination: {
+          el: '.swiper-pagination',
+          dynamicBullets: true
+          // clickable: true,
+        },
+      }
+    });
+  };
 
+  var initSwiperL = function () {
+    swiper = new Swiper('.swiper-container', {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      // pagination: {
+      //   el: '.swiper-pagination',
+      //   clickable: true,
+      // },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  };
+
+  var initSwiperS = function () {
+    swiper = new Swiper('.swiper-container', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      pagination: {
+        el: '.swiper-pagination',
+        dynamicBullets: true
+        // clickable: true,
+      },
+    });
+  };
+
+  var destroySwiper = function () {
+    swiper.destroy(true, true);
+    swiper = undefined;
+  };
+
+  var changeSwiper = function () {
+    if (window.matchMedia('(max-width: 1023px)').matches && window.matchMedia('(min-width: 768px)').matches) {
+      if (swiper !== undefined) {
+        destroySwiper();
+      }
+      initSwiperM();
+    } else if (window.matchMedia('(min-width: 1024px)').matches) {
+      if (swiper !== undefined) {
+        destroySwiper();
+      }
+      // initSwiperL();
+    } else if (window.matchMedia('(max-width: 767px)').matches) {
+      if (swiper !== undefined) {
+        destroySwiper();
+      }
+      initSwiperS();
+    }
+  };
+
+  window.addEventListener('resize', changeSwiper);
+  changeSwiper();
+})();
+
+// ЗАМЕНА ТЕКСТА
+(function () {
+  var changeText = function () {
+    var element = document.querySelector('.partners h2');
+    if (element) {
+      if (window.matchMedia('(min-width: 768px) and (max-width: 1023px)').matches) {
+        element.innerHTML = 'Наши партнеры';
+      } else {
+        element.innerHTML = 'Партнеры';
+      }
+    }
+  };
+  window.addEventListener('resize', changeText);
+  changeText();
+})();
+
+
+// КЛОНИРОВАНИЕ БЛОКА МЕНЮ
+(function () {
+  var contactsElem = document.querySelector('.contacts-list');
+  var newSibling = document.querySelector('.social');
+  var newParentDiv = document.querySelector('.footer__container');
+
+  if (contactsElem && newSibling && newParentDiv) {
+    var newContactsElem = contactsElem.cloneNode(true);
+    newParentDiv.insertBefore(newContactsElem, newSibling);
+    newContactsElem.classList.add('contacts-list--shadow');
+  }
+})();
