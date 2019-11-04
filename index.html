@@ -53,21 +53,32 @@
         </div>
         <section class="main-header__advantages advantages">
           <h2 class="visually-hidden">Наши преимушества</h2>
-          <ul class="advantages__list">
-            <li class="advantages__item advantages__item--quality">
-              <svg width="62" height="64"><use xlink:href="img/sprite_auto.svg#icon-like"></use></svg>
-              <p>Гарантированное высокое качество продукции</p></li>
-            <li class="advantages__item advantages__item--deadlines advantages__item--selected">
-              <svg width="74" height="49"><use xlink:href="img/sprite_auto.svg#icon-handshake"></use></svg>
-              <p>Исполнение всех сроков&nbsp;и&nbsp;обязательств</p></li>
-            <li class="advantages__item advantages__item--settings">
-              <svg width="70" height="69"><use xlink:href="img/sprite_auto.svg#icon-settings"></use></svg>
-              <p>Собственная производственная база</p></li>
-          </ul>
-          <div class="advantages__buttons">
-            <button type="button" class="button" id="1"><span class="visually-hidden">Первый слайд</span></button>
-            <button type="button" class="button button--selected" id="2"><span class="visually-hidden">Второй слайд</span></button>
-            <button type="button" class="button" id="3"><span class="visually-hidden">Третий слайд</span></button>
+          <div class="advantages__wrapper">
+            <ul class="advantages__list swiper-wrapper">
+              <li class="advantages__item advantages__item--quality swiper-slide">
+                <div>
+                  <svg width="62" height="64"><use xlink:href="img/sprite_auto.svg#icon-like"></use></svg>
+                  <p>Гарантированное высокое качество продукции</p>
+                </div>
+              </li>
+              <li class="advantages__item advantages__item--deadlines advantages__item swiper-slide">
+                <div>
+                  <svg width="74" height="49"><use xlink:href="img/sprite_auto.svg#icon-handshake"></use></svg>
+                  <p>Исполнение всех сроков&nbsp;и&nbsp;обязательств</p>
+                </div>
+              </li>
+              <li class="advantages__item advantages__item--settings swiper-slide">
+                <div>
+                  <svg width="70" height="69"><use xlink:href="img/sprite_auto.svg#icon-settings"></use></svg>
+                  <p>Собственная производственная база</p>
+                </div>
+              </li>
+            </ul>
+            <div class="advantages__buttons swiper-pagination">
+              <!-- <button type="button" class="button" id="1"><span class="visually-hidden">Первый слайд</span></button>
+              <button type="button" class="button button-selected" id="2"><span class="visually-hidden">Второй слайд</span></button>
+              <button type="button" class="button" id="3"><span class="visually-hidden">Третий слайд</span></button> -->
+            </div>
           </div>
         </section>
       </div>
@@ -77,76 +88,76 @@
       <ul class="services__list">
         <li class="services__item services__item--opened">
           <button class="button" type="button"><span class="visually-hidden">Подробнее</span></button>
-          <h3>Проектирование</h3>
+          <div><h3>Проектирование</h3></div>
           <ul class="services__sublist">
-            <li><a href="#">Предварительная разработка концепции;</a></li>
-            <li><a href="#">Установка систем энергоснабжения;</a></li>
-            <li><a href="#">Оформление задания на проектирование;</a></li>
-            <li><a href="#">Разработка всей рабочей и проектной документации;</a></li>
-            <li><a href="#">Окончательное согласование проекта энергоснабжения в органах гос.надзора;</a></li>
-            <li><a href="#">Обеспечение авторского надзора на&nbsp;протяжении всего строительства <span>(контроль за соблюдением всех норм и проектных разработок)</span>.</a></li>
+            <li><a href="#"><p>Предварительная разработка концепции;</p></a></li>
+            <li><a href="#"><p>Установка систем энергоснабжения;</p></a></li>
+            <li><a href="#"><p>Оформление задания на проектирование;</p></a></li>
+            <li><a href="#"><p>Разработка всей рабочей и проектной документации;</p></a></li>
+            <li><a href="#"><p>Окончательное согласование проекта энергоснабжения в органах гос.надзора;</p></a></li>
+            <li><a href="#"><p>Обеспечение авторского надзора на&nbsp;протяжении всего строительства <span>(контроль за соблюдением всех норм и проектных разработок)</span>.</p></a></li>
           </ul>
         </li>
         <li class="services__item">
           <button class="button" type="button"><span class="visually-hidden">Подробнее</span></button>
-          <h3>Инженерные изыскания</h3>
+          <div><h3>Инженерные изыскания</h3></div>
           <ul class="services__sublist">
-            <li><a href="#">Инженерно-геодезические изыскания;</a></li>
-            <li><a href="#">Инженерно-геофизические изыскания;</a></li>
-            <li><a href="#">Инженерно-топографические изыскания;</a></li>
-            <li><a href="#">Инженерно-геологические изыскания;</a></li>
-            <li><a href="#">Изыскания грунтовых строительных материалов <span>(проведение опытных полевых работ и обследование земляных сооружений)</span>;</a></li>
-            <li><a href="#">Инженерно-экологические (полевые работы, а также лабораторные и камеральные работы);</a></li>
-            <li><a href="#">Археологические;</a></li>
-            <li><a href="#">Кадастровые и землеустроительные.</a></li>
+            <li><a href="#"><p>Инженерно-геодезические изыскания;</p></a></li>
+            <li><a href="#"><p>Инженерно-геофизические изыскания;</p></a></li>
+            <li><a href="#"><p>Инженерно-топографические изыскания;</p></a></li>
+            <li><a href="#"><p>Инженерно-геологические изыскания;</p></a></li>
+            <li><a href="#"><p>Изыскания грунтовых строительных материалов <span>(проведение опытных полевых работ и обследование земляных сооружений)</span>;</p></a></li>
+            <li><a href="#"><p>Инженерно-экологические (полевые работы, а также лабораторные и камеральные работы);</p></a></li>
+            <li><a href="#"><p>Археологические;</p></a></li>
+            <li><a href="#"><p>Кадастровые и землеустроительные.</p></a></li>
           </ul>
         </li>
         <li class="services__item">
           <button class="button" type="button"><span class="visually-hidden">Подробнее</span></button>
-          <h3>Строительно-монтажные работы</h3>
+          <div><h3>Строительно-монтажные работы</h3></div>
           <ul class="services__sublist">
-            <li><a href="#">Строительство и реконструкция подстанций до 500 кВ и распределительных устройств станций до 500 кВ;</a></li>
-            <li><a href="#">Строительство распределительных пунктов;</a></li>
-            <li><a href="#">Внедрение систем автоматизации управления оборудованием подстанций до 500 кВ;</a></li>
-            <li><a href="#">Вынос действующих кабелей из строительной зоны;</a></li>
-            <li><a href="#">Обеспечение временного электроснабжения;</a></li>
-            <li><a href="#">Монтаж электрооборудования.</a></li>
+            <li><a href="#"><p>Строительство и реконструкция подстанций до 500 кВ и распределительных устройств станций до 500 кВ;</p></a></li>
+            <li><a href="#"><p>Строительство распределительных пунктов;</p></a></li>
+            <li><a href="#"><p>Внедрение систем автоматизации управления оборудованием подстанций до 500 кВ;</p></a></li>
+            <li><a href="#"><p>Вынос действующих кабелей из строительной зоны;</p></a></li>
+            <li><a href="#"><p>Обеспечение временного электроснабжения;</p></a></li>
+            <li><a href="#"><p>Монтаж электрооборудования.</p></a></li>
           </ul>
         </li>
         <li class="services__item">
           <button class="button" type="button"><span class="visually-hidden">Подробнее</span></button>
-          <h3>Эксплуатация и сервисное обслуживание</h3>
+          <div><h3>Эксплуатация и сервисное обслуживание</h3></div>
           <ul class="services__sublist">
-            <li><a href="#">Эксплуатация электрики зданий и энергоустановок, снабжающих энергией эксплуатируемые сооружения;</a></li>
-            <li><a href="#">Эксплуатация систем отопления объектов с проведением плановых сезонных мероприятий</a></li>
-            <li><a href="#">Эксплуатация систем ХВС и ГВС эксплуатируемого здания;</a></li>
-            <li><a href="#">Сервисное обслуживание и эксплуатация систем водоснабжения, водоподготовки и фильтрации в обслуживаемом здании;</a></li>
-            <li><a href="#">Обслуживание системы дренажа, канализации и ливнестоков: прочистка, промывка, вывоз отходов за территорию;</a></li>
-            <li><a href="#">Сезонная перенастройка автоматических элементов систем эксплуатации здания и другое.</a></li>
+            <li><a href="#"><p>Эксплуатация электрики зданий и энергоустановок, снабжающих энергией эксплуатируемые сооружения;</p></a></li>
+            <li><a href="#"><p>Эксплуатация систем отопления объектов с проведением плановых сезонных мероприятий</p></a></li>
+            <li><a href="#"><p>Эксплуатация систем ХВС и ГВС эксплуатируемого здания;</p></a></li>
+            <li><a href="#"><p>Сервисное обслуживание и эксплуатация систем водоснабжения, водоподготовки и фильтрации в обслуживаемом здании;</p></a></li>
+            <li><a href="#"><p>Обслуживание системы дренажа, канализации и ливнестоков: прочистка, промывка, вывоз отходов за территорию;</p></a></li>
+            <li><a href="#"><p>Сезонная перенастройка автоматических элементов систем эксплуатации здания и другое.</p></a></li>
           </ul>
         </li>
         <li class="services__item">
           <button class="button" type="button"><span class="visually-hidden">Подробнее</span></button>
-          <h3>Электролаборатория</h3>
+          <div><h3>Электролаборатория</h3></div>
           <ul class="services__sublist">
-            <li><a href="#">Проверка состояния различных элементов устройств заземления;</a></li>
-            <li><a href="#">Проверка наличия цепи, проведение замеров сопротивлений (переходных) между заземляющими проводниками и заземлителями, проверку металлосвязи;</a></li>
-            <li><a href="#">Проверка систем молниезащиты;</a></li>
-            <li><a href="#">Измерение сопротивления изоляции электрических кабелей, аппаратов, электропроводок и электрооборудования;</a></li>
-            <li><a href="#">Измерение сопротивления заземления и заземляющих устройств;</a></li>
-            <li><a href="#">Поиск кабельных трасс, мест повреждения и «прожиг кабеля»;</a></li>
-            <li><a href="#">Проведение всех необходимых испытаний и измерений для кабельных линий, включая кабель с изоляцией из сшитого полиэтилена до 220 кВ.</a></li>
+            <li><a href="#"><p>Проверка состояния различных элементов устройств заземления;</p></a></li>
+            <li><a href="#"><p>Проверка наличия цепи, проведение замеров сопротивлений (переходных) между заземляющими проводниками и заземлителями, проверку металлосвязи;</p></a></li>
+            <li><a href="#"><p>Проверка систем молниезащиты;</p></a></li>
+            <li><a href="#"><p>Измерение сопротивления изоляции электрических кабелей, аппаратов, электропроводок и электрооборудования;</p></a></li>
+            <li><a href="#"><p>Измерение сопротивления заземления и заземляющих устройств;</p></a></li>
+            <li><a href="#"><p>Поиск кабельных трасс, мест повреждения и «прожиг кабеля»;</p></a></li>
+            <li><a href="#"><p>Проведение всех необходимых испытаний и измерений для кабельных линий, включая кабель с изоляцией из сшитого полиэтилена до 220 кВ.</p></a></li>
           </ul>
         </li>
         <li class="services__item">
           <button class="button" type="button"><span class="visually-hidden">Подробнее</span></button>
-          <h3>Услуги по&nbsp;технологическому присоединению</h3>
+          <div><h3>Услуги по&nbsp;технологическому присоединению</h3></div>
           <ul class="services__sublist">
-            <li><a href="#">Оказание технико-экономического консалтинга в составлении договора на технологическое присоединение мощности потребителя к сетям электросетевых компаний;</a></li>
-            <li><a href="#">Обследование присоединяемых устройств ответственным лицом по государственному надзору при участии сетевого оператора и собственника устройства;</a></li>
-            <li><a href="#">Фактическое присоединение объектов заявителя к сетям оператора;</a></li>
-            <li><a href="#">Составление и согласование необходимой технической документации для ввода в эксплуатацию объекта;</a></li>
-            <li><a href="#">Ввод присоединенного объекта в эксплуатацию.</a></li>
+            <li><a href="#"><p>Оказание технико-экономического консалтинга в составлении договора на технологическое присоединение мощности потребителя к сетям электросетевых компаний;</p></a></li>
+            <li><a href="#"><p>Обследование присоединяемых устройств ответственным лицом по государственному надзору при участии сетевого оператора и собственника устройства;</p></a></li>
+            <li><a href="#"><p>Фактическое присоединение объектов заявителя к сетям оператора;</p></a></li>
+            <li><a href="#"><p>Составление и согласование необходимой технической документации для ввода в эксплуатацию объекта;</p></a></li>
+            <li><a href="#"><p>Ввод присоединенного объекта в эксплуатацию.</p></a></li>
           </ul>
         </li>
       </ul>
@@ -187,23 +198,25 @@
       </ul>
     </section>
     <section id="partners" class="partners wrapper">
-      <h2>Партнеры</h2>
-      <div class="partners__container swiper-container">
-        <!-- <divpartners__list-buttons> -->
-          <button class="partners__list-button button" type="button"><svg width="16" height="8"><use xlink:href="img/sprite_auto.svg#icon-arrow-left"></use></svg><span class="visually-hidden">Подробнее</span><span class="visually-hidden">Назад</span></button>
-          <button class="partners__list-button button" type="button"><svg width="16" height="8"><use xlink:href="img/sprite_auto.svg#icon-arrow-right"></use></svg><span class="visually-hidden">Подробнее</span><span class="visually-hidden">Вперед</span></button>
-        <!-- </div> -->
-        <ul class="partners__list swiper-wrapper">
-          <li class="partners__item swiper-slide partners__item--ava"><a href="#" class="partners__link"><span class="visually-hidden">AVA Company</span></a></li>
-          <li class="partners__item swiper-slide partners__item--mirror"><a href="#" class="partners__link"><span class="visually-hidden">Mirror</span></a></li>
-          <li class="partners__item swiper-slide partners__item--shield"><a href="#" class="partners__link"><span class="visually-hidden">Shield</span></a></li>
-          <li class="partners__item swiper-slide partners__item--ntf"><a href="#" class="partners__link"><span class="visually-hidden">ЗАО НТФ Теплодомэнерг</span></a></li>
-        </ul>
-          <div class="partners__pagination swiper-pagination">
-            <!-- <button type="button" class="button" id="1"><span class="visually-hidden">Первый слайд</span></button>
-            <button type="button" class="button button--selected" id="2"><span class="visually-hidden">Второй слайд</span></button>
-            <button type="button" class="button" id="3"><span class="visually-hidden">Третий слайд</span></button> -->
+      <div class="partners__wrapper">
+        <h2>Партнеры</h2>
+        <div class="partners__container swiper-container">
+          <!-- <divpartners__list-buttons> -->
+            <button class="partners__list-button button swiper-button-prev" type="button"><svg width="16" height="8"><use xlink:href="img/sprite_auto.svg#icon-arrow-left"></use></svg><span class="visually-hidden">Назад</span></button>
+            <button class="partners__list-button button swiper-button-next" type="button"><svg width="16" height="8"><use xlink:href="img/sprite_auto.svg#icon-arrow-right"></use></svg><span class="visually-hidden">Вперед</span></button>
           <!-- </div> -->
+          <ul class="partners__list swiper-wrapper">
+            <li class="partners__item swiper-slide partners__item--ava"><a href="#" class="partners__link"><span class="visually-hidden">AVA Company</span></a></li>
+            <li class="partners__item swiper-slide partners__item--mirror"><a href="#" class="partners__link"><span class="visually-hidden">Mirror</span></a></li>
+            <li class="partners__item swiper-slide partners__item--shield"><a href="#" class="partners__link"><span class="visually-hidden">Shield</span></a></li>
+            <li class="partners__item swiper-slide partners__item--ntf"><a href="#" class="partners__link"><span class="visually-hidden">ЗАО НТФ Теплодомэнерг</span></a></li>
+            <li class="partners__item swiper-slide partners__item--ava"><a href="#" class="partners__link"><span class="visually-hidden">AVA Company</span></a></li>
+            <li class="partners__item swiper-slide partners__item--mirror"><a href="#" class="partners__link"><span class="visually-hidden">Mirror</span></a></li>
+            <li class="partners__item swiper-slide partners__item--shield"><a href="#" class="partners__link"><span class="visually-hidden">Shield</span></a></li>
+            <li class="partners__item swiper-slide partners__item--ntf"><a href="#" class="partners__link"><span class="visually-hidden">ЗАО НТФ Теплодомэнерг</span></a></li>
+          </ul>
+            <div class="partners__pagination swiper-pagination">
+          </div>
         </div>
       </div>
     </section>
@@ -214,23 +227,26 @@
         <h2>Контакты</h2>
         <div class="footer__map"></div>
         <section id="consultation" class="footer__form">
-          <h3>Свяжитесь с нами</h3>
+          <div class="footer__form-wrapper">
+            <h3>Свяжитесь с нами</h3>
           <form action="https://echo.htmlacademy.ru" method="POST" class="form">
-            <div class="form__field form__field--text">
-              <label for="customer-name" title="Ваше имя"></label>
-              <input id="customer-name" placeholder="Имя" type="text" name="name" required="" autofocus="">
-            </div>
-            <div class="form__field form__field--tel">
-              <label for="customer-phone" title="Ваш телефон"></label>
-              <input id="customer-phone" placeholder="Телефон" type="tel" name="phone" required="">
+            <div class="form__field-wrapper">
+              <div class="form__field form__field--text">
+                <label for="customer-name" title="Ваше имя">Имя</label>
+                <input id="customer-name" placeholder="" type="text" name="name" required="">
+              </div>
+              <div class="form__field form__field--tel">
+                <label for="customer-phone" title="Ваш телефон">Телефон</label>
+                <input id="customer-phone" placeholder="" type="tel" name="phone" required="">
+              </div>
             </div>
             <div class="form__field form__field--email">
-              <label for="customer-email" title="Ваш электронный адрес"></label>
-              <input id="customer-email" placeholder="E-mail" type="email" name="email" required="">
+              <label for="customer-email" title="Ваш электронный адрес">E-mail</label>
+              <input id="customer-email" placeholder="" type="email" name="email" required="">
               </div>
             <div class="form__field form__field--textarea">
-              <label for="customer-messsage" title="Ваше сообщение"></label>
-              <textarea id="customer-messsage" placeholder="Сообщение" name="messsage"></textarea>
+              <label for="customer-messsage" title="Ваше сообщение">Сообщение</label>
+              <textarea id="customer-messsage" placeholder="" name="messsage"></textarea>
             </div>
             <div class="form__conditions">
               <p>Заполняя форму на сайте, вы соглашаетесь с нашей</p>
@@ -238,6 +254,7 @@
             </div>
             <button type="submit">Отправить</button>
           </form>
+          </div>
         </section>
         <div class="footer__contacts-list contacts-list">
           <p class="contacts-list__item contacts-list__item--address">
@@ -290,6 +307,7 @@
     </div>
   </footer>
   <script src="https://unpkg.com/swiper/js/swiper.js"></script>
+  <script src="https://unpkg.com/imask"></script>
   <script src="js/script.js"></script>
   <script src="js/libs.js"></script>
 </body>

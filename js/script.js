@@ -1,3 +1,5 @@
+/* eslint-disable no-redeclare */
+/* eslint-disable new-cap */
 /* eslint-disable no-console */
 /* eslint-disable no-alert */
 /* eslint-disable no-shadow */
@@ -7,7 +9,7 @@
 /* eslint-disable no-unused-vars */
 'use strict';
 
-// МЕНЮ
+/* МЕНЮ */
 (function () {
   var menu = document.querySelector('.menu');
   var menuToggler = menu.querySelector('.menu__toggler');
@@ -62,50 +64,50 @@
 //   changeDescriptionText();
 // })();
 
-// Слайдер преимуществ
-(function () {
-  var Enter = 13;
-  var advantages = document.querySelector('.advantages');
-  var buttons = advantages.querySelectorAll('.button');
+// // Слайдер преимуществ
+// (function () {
+//   var Enter = 13;
+//   var advantages = document.querySelector('.advantages');
+//   var buttons = advantages.querySelectorAll('.button');
 
 
-  var selectItem = function (evt) {
-    evt.preventDefault();
-    if (evt.target.classList.contains('button--selected') !== true) {
-      // Меняются классы кнопок
-      // удалить старый
-      var prevButton = advantages.querySelector('.button--selected');
-      prevButton.classList.remove('button--selected');
-      // добавить новый
-      evt.target.classList.add('button--selected');
+//   var selectItem = function (evt) {
+//     evt.preventDefault();
+//     if (evt.target.classList.contains('button--selected') !== true) {
+//       // Меняются классы кнопок
+//       // удалить старый
+//       var prevButton = advantages.querySelector('.button--selected');
+//       prevButton.classList.remove('button--selected');
+//       // добавить новый
+//       evt.target.classList.add('button--selected');
 
-      // Меняются классы слайдов
-      // удалить старый
-      var prevItem = advantages.querySelector('.advantages__item--selected');
-      prevItem.classList.remove('advantages__item--selected');
-      // добавить новый
-      var currentButton = evt.target.id;
-      var selector = '.advantages__item:nth-child(' + currentButton + ')';
-      var currentItem = advantages.querySelector(selector);
-      currentItem.classList.add('advantages__item--selected');
-    }
-  };
-  if (advantages && buttons) {
-    for (var i = 0; i < buttons.length; i++) {
-      var button = buttons[i];
-      button.addEventListener('click', function (evt) {
-        selectItem(evt);
-      });
-      button.addEventListener('keydown', function (evt) {
-        if (evt.keyCode === Enter) {
-          selectItem(evt);
-        }
-      });
-    }
-  }
-})();
+//       // Меняются классы слайдов
+//       // удалить старый
+//       var prevItem = advantages.querySelector('.advantages__item--selected');
+//       prevItem.classList.remove('advantages__item--selected');
+//       // добавить новый
+//       var currentButton = evt.target.id;
+//       var selector = '.advantages__item:nth-child(' + currentButton + ')';
+//       var currentItem = advantages.querySelector(selector);
+//       currentItem.classList.add('advantages__item--selected');
+//     }
+//   };
+//   if (advantages && buttons) {
+//     for (var i = 0; i < buttons.length; i++) {
+//       var button = buttons[i];
+//       button.addEventListener('click', function (evt) {
+//         selectItem(evt);
+//       });
+//       button.addEventListener('keydown', function (evt) {
+//         if (evt.keyCode === Enter) {
+//           selectItem(evt);
+//         }
+//       });
+//     }
+//   }
+// })();
 
-// ПЕРЕМЕЩЕНИЕ БЛОКА ПРЕИМУЩЕСТВ
+/* ПЕРЕМЕЩЕНИЕ БЛОКА ПРЕИМУЩЕСТВ */
 (function () {
   var moveAdvantages = function () {
     var advantagesElem = document.querySelector('.advantages');
@@ -160,7 +162,7 @@
 //   })(args);
 // })();
 
-// ПЕРЕМЕЩЕНИЕ БЛОКА ОПИСАНИЯ
+/* ПЕРЕМЕЩЕНИЕ БЛОКА ОПИСАНИЯ */
 (function () {
   var moveDescription = function () {
     var descriptionElem = document.querySelector('.description');
@@ -201,7 +203,7 @@
   moveDescription();
 })();
 
-// ПРОКРУТКА
+/* ПРОКРУТКА */
 
 (function () {
   var headerConsultationLink = document.querySelector('.header__contacts-contact .button');
@@ -229,9 +231,9 @@
   }
 })();
 
-// ОБРЕЗКА КОНЦА СТРОКИ
+/* ОБРЕЗКА КОНЦА СТРОКИ */
 (function () {
-  var allLinks = document.querySelectorAll('.services__sublist a');
+  var allLinks = document.querySelectorAll('.services__sublist a p');
 
   if (allLinks) {
     for (var i = 0; i < allLinks.length; i++) {
@@ -242,7 +244,7 @@
 })();
 
 
-// АККОРДЕОНЫ
+/* АККОРДЕОНЫ */
 (function () {
   var Enter = 13;
   var allButtons = document.querySelectorAll('.services__item button');
@@ -286,7 +288,7 @@
   }
 })();
 
-// SWIPER
+/* SWIPER для Партнеров */
 (function () {
   var swiper;
 
@@ -300,6 +302,8 @@
     swiper = new Swiper('.swiper-container', {
       effect: 'coverflow',
       grabCursor: true,
+      initialSlide: 1,
+      // loop: true,
       centeredSlides: true,
       slidesPerView: 'auto',
       coverflowEffect: {
@@ -309,22 +313,23 @@
         // loop: true,
         rotate: 0,
         stretch: 0.22,
-        depth: 150,
+        depth: 250,
         modifier: 1,
         slideShadows: false,
-        pagination: {
-          el: '.swiper-pagination',
-          dynamicBullets: true,
-          // clickable: true,
-        },
-      }
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        dynamicBullets: true,
+        // clickable: true,
+      },
     });
   };
 
   var initSwiperL = function () {
     swiper = new Swiper('.swiper-container', {
-      slidesPerView: 3,
+      slidesPerView: 4,
       spaceBetween: 30,
+      centeredSlides: false,
       // pagination: {
       //   el: '.swiper-pagination',
       //   clickable: true,
@@ -338,7 +343,8 @@
 
   var initSwiperS = function () {
     swiper = new Swiper('.swiper-container', {
-      slidesPerView: 1,
+      slidesPerView: 'auto',
+      // centeredSlides: true,
       spaceBetween: 30,
       pagination: {
         el: '.swiper-pagination',
@@ -358,7 +364,7 @@
       if (swiper !== undefined) {
         destroySwiper();
       }
-      // initSwiperL();
+      initSwiperL();
     } else if (window.matchMedia('(max-width: 767px)').matches) {
       if (swiper !== undefined) {
         destroySwiper();
@@ -371,7 +377,117 @@
   changeSwiper();
 })();
 
-// ЗАМЕНА ТЕКСТА
+// var toggleSwiperClasses = function (add) {
+//   var wrapper = document.querySelector('.advantages__list');
+//   var items = document.querySelectorAll('.advantages__item');
+//   if (add) {
+//     wrapper.classList.add('swiper-wrapper');
+//     for (var i = 0; i <= items.length; i++) {
+//       items[i].classList.add('swiper-slide');
+//     }
+//   } else {
+//     wrapper.classList.remove('swiper-wrapper');
+//     for (var i = 0; i <= items.length; i++) {
+//       items[i].classList.remove('swiper-slide');
+//     }
+//   }
+// };
+
+/* SWIPER для Преимуществ */
+(function () {
+  var advantagesSwiper;
+
+  var destroyAdvantagesSwiper = function () {
+    advantagesSwiper.destroy(true, true);
+    advantagesSwiper = undefined;
+  };
+
+
+  var initAdvantagesSwiperS = function () {
+    advantagesSwiper = new Swiper('.advantages__wrapper', {
+      slidesPerView: 'auto',
+      initialSlide: 1,
+      // centeredSlides: true,
+      spaceBetween: 30,
+      pagination: {
+        el: '.advantages__buttons',
+        dynamicBullets: true,
+        // clickable: true,
+      },
+    });
+  };
+
+  var initAdvantagesSwiperM = function () {
+    advantagesSwiper = new Swiper('.advantages__wrapper', {
+      effect: 'coverflow',
+      grabCursor: true,
+      initialSlide: 1,
+      loop: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        // visibilityFullFit: true,
+        // cssWidthAndHeight: true,
+        // autoResize: false,
+        // loop: true,
+        rotate: 0,
+        stretch: 0.22,
+        depth: 250,
+        modifier: 1,
+        slideShadows: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        // dynamicBullets: true,
+        // clickable: true,
+      },
+    });
+
+
+    // var changeClasses = function () {
+    //   var slides = document.querySelectorAll('.advantages__item');
+    //   for (var i = 0; i <= slides.length; i++) {
+    //     var currentSlide = slides[i];
+    //     var zet = currentSlide.style.zIndex;
+    //     if (zet === 1 || zet !== -1) {
+    //       currentSlide.classList.remove('swiper-slide-hidden');
+    //     } else {
+    //       currentSlide.classList.add('swiper-slide-hidden');
+    //     }
+    //   }
+    // };
+
+    // advantagesSwiper.on('slideChangeTransitionEnd', changeClasses);
+  };
+
+  var changeAdvantagesSwiper = function () {
+    // Для десктопа
+    if (window.matchMedia('(min-width: 1024px)').matches) {
+      if (advantagesSwiper !== undefined) {
+        destroyAdvantagesSwiper();
+      }
+      // Для планшета
+    } else if (window.matchMedia('(max-width: 1023px)').matches && window.matchMedia('(min-width: 768px)').matches) {
+      if (advantagesSwiper !== undefined) {
+        destroyAdvantagesSwiper();
+      }
+      initAdvantagesSwiperM();
+
+      // Для мобилки
+    } else if (window.matchMedia('(max-width: 767px)').matches) {
+      if (advantagesSwiper !== undefined) {
+        destroyAdvantagesSwiper();
+      }
+      initAdvantagesSwiperS();
+    }
+  };
+
+  window.addEventListener('resize', changeAdvantagesSwiper);
+  changeAdvantagesSwiper();
+  window.advantagesSwiper = advantagesSwiper;
+})();
+
+/* ЗАМЕНА ТЕКСТА */
 (function () {
   var changeText = function () {
     var element = document.querySelector('.partners h2');
@@ -388,7 +504,7 @@
 })();
 
 
-// КЛОНИРОВАНИЕ БЛОКА МЕНЮ
+/* КЛОНИРОВАНИЕ БЛОКА МЕНЮ */
 (function () {
   var contactsElem = document.querySelector('.contacts-list');
   var newSibling = document.querySelector('.social');
@@ -400,3 +516,13 @@
     newContactsElem.classList.add('contacts-list--shadow');
   }
 })();
+
+// МАСКА ДЛЯ ПОЛЯ ТЕЛЕФОНА
+
+var telInput = document.getElementById('customer-phone');
+
+var maskOptions = {
+  mask: '+{7}(000)000-00-00'
+};
+// eslint-disable-next-line no-undef
+var mask = IMask(telInput, maskOptions);
