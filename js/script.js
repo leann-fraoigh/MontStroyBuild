@@ -243,17 +243,17 @@
   }
 })();
 
-/* Неполная последняя строка */
-(function () {
-  var allCards = document.querySelectorAll('.projects__item p');
+// /* Неполная последняя строка */
+// (function () {
+//   var allCards = document.querySelectorAll('.projects__item p');
 
-  if (allCards) {
-    for (var i = 0; i < allCards.length; i++) {
-      var text = allCards[i];
-      text.innerHTML = text.innerHTML += '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
-    }
-  }
-})();
+//   if (allCards) {
+//     for (var i = 0; i < allCards.length; i++) {
+//       var text = allCards[i];
+//       text.innerHTML = text.innerHTML += '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+//     }
+//   }
+// })();
 
 /* АККОРДЕОНЫ */
 (function () {
@@ -261,6 +261,7 @@
   var allButtons = document.querySelectorAll('.services__item button');
   var allElements = document.querySelectorAll('.services__item');
 
+  // Сначала закрываем все что открыто
   if (allButtons && allElements) {
 
     var closeAll = function () {
@@ -276,11 +277,11 @@
     var toggleContent = function (evt) {
       evt.preventDefault();
       // Close if opened. Else open anything that is openes and open target
-      if (evt.target.parentNode.classList.contains('services__item--opened')) {
+      if (evt.target.closest('.services__item').classList.contains('services__item--opened')) {
         closeAll();
       } else {
         closeAll();
-        evt.target.parentNode.classList.add('services__item--opened');
+        evt.target.closest('.services__item').classList.add('services__item--opened');
       }
     };
 
@@ -297,6 +298,27 @@
       });
     }
   }
+})();
+
+/* ОТКЛЮЧЕНИЕ КНОПОК УСЛУГ НА ДЕСКТОПЕ*/
+(function () {
+  var allButtons = document.querySelectorAll('.services__item button');
+  var toggleButtonProperty = function () {
+    if (window.matchMedia('(min-width: 1024px)').matches) {
+      for (var i = 0; i < allButtons.length; i++) {
+        var element = allButtons[i];
+        element.disabled = true;
+      }
+    } else {
+      for (var i = 0; i < allButtons.length; i++) {
+        var element = allButtons[i];
+        element.disabled = false;
+      }
+    }
+  };
+
+  toggleButtonProperty();
+  window.addEventListener('resize', toggleButtonProperty);
 })();
 
 /* SWIPER для Партнеров */
