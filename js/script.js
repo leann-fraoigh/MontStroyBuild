@@ -277,12 +277,12 @@
     var toggleContent = function (evt) {
       evt.preventDefault();
       // Close if opened. Else open anything that is openes and open target
-      if (evt.target.closest('.services__item').classList.contains('services__item--opened')) {
-        closeAll();
-      } else {
-        closeAll();
-        evt.target.closest('.services__item').classList.add('services__item--opened');
-      }
+      // if (evt.target.closest('.services__item').classList.contains('services__item--opened')) {
+      //   closeAll();
+      // } else {
+      closeAll();
+      evt.target.closest('.services__item').classList.add('services__item--opened');
+      // }
     };
 
     // Add eventListeners to all buttons
@@ -290,14 +290,62 @@
       var button = allButtons[i];
       button.addEventListener('click', function (evt) {
         toggleContent(evt);
+        changeOrder();
+        // if (window.matchMedia('(max-width: 1023px)').matches && window.matchMedia('(min-width: 768px)').matches) {
+        adjustHeight();
+        // }
       });
       button.addEventListener('keydown', function (evt) {
         if (evt.keyCode === Enter) {
           toggleContent(evt);
+          changeOrder();
+          // if (window.matchMedia('(max-width: 1023px)').matches && window.matchMedia('(min-width: 768px)').matches) {
+          adjustHeight();
+          // }
         }
       });
     }
   }
+
+  var adjustHeight = function () {
+    if (window.matchMedia('(max-width: 1023px)').matches && window.matchMedia('(min-width: 768px)').matches) {
+      // var list = document.querySelectorAll('.services__list');
+      var height = document.querySelector('.services__item--opened').clientHeight;
+      // var h = list.style.height;
+      document.querySelector('.services__list').style.height = (height + 'px');
+    }
+  };
+
+  var changeOrder = function () {
+    if (window.matchMedia('(max-width: 1023px)').matches && window.matchMedia('(min-width: 768px)').matches) {
+      var currentElement = document.querySelector('.services__item--opened');
+      for (var i = 0; i < allElements.length; i++) {
+        var element = allElements[i];
+        element.style.order = '0';
+      }
+      currentElement.style.order = '-1';
+    }
+  };
+
+  var resetHeight = function () {
+    if (window.matchMedia('(min-width: 1024px)').matches || window.matchMedia('(max-width: 767px)').matches) {
+      document.querySelector('.services__list').style.height = '';
+    }
+  };
+
+  var resetOrder = function () {
+    if (window.matchMedia('(min-width: 1024px)').matches) {
+      for (var i = 0; i < allElements.length; i++) {
+        var element = allElements[i];
+        element.style.order = '0';
+      }
+    }
+  };
+
+  window.addEventListener('resize', resetHeight);
+  window.addEventListener('resize', resetOrder);
+  window.addEventListener('resize', changeOrder);
+  window.addEventListener('resize', adjustHeight);
 })();
 
 /* ОТКЛЮЧЕНИЕ КНОПОК УСЛУГ НА ДЕСКТОПЕ*/
