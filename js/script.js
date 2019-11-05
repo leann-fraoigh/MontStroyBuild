@@ -243,6 +243,17 @@
   }
 })();
 
+/* Неполная последняя строка */
+(function () {
+  var allCards = document.querySelectorAll('.projects__item p');
+
+  if (allCards) {
+    for (var i = 0; i < allCards.length; i++) {
+      var text = allCards[i];
+      text.innerHTML = text.innerHTML += '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+    }
+  }
+})();
 
 /* АККОРДЕОНЫ */
 (function () {
