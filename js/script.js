@@ -1,3 +1,6 @@
+/* eslint-disable eqeqeq */
+/* eslint-disable curly */
+/* eslint-disable no-trailing-spaces */
 /* eslint-disable no-redeclare */
 /* eslint-disable new-cap */
 /* eslint-disable no-console */
@@ -257,9 +260,36 @@
 
 /* АККОРДЕОНЫ */
 (function () {
+  // Полифилл для IE closest
+  if (!Element.prototype.matches) {
+    Element.prototype.matches = Element.prototype.msMatchesSelector ||
+                                Element.prototype.webkitMatchesSelector;
+  }
+
+  if (!Element.prototype.closest) {
+    Element.prototype.closest = function (s) {
+      var el = this;
+
+      do {
+        if (el.matches(s)) return el;
+        el = el.parentElement || el.parentNode;
+      } while (el !== null && el.nodeType === 1);
+      return null;
+    };
+  }
+
+
   var Enter = 13;
   var allButtons = document.querySelectorAll('.services__item button');
   var allElements = document.querySelectorAll('.services__item');
+
+  var resetHeight = function () {
+    if (window.matchMedia('(min-width: 1024px)').matches || window.matchMedia('(max-width: 767px)').matches) {
+      document.querySelector('.services__list').style.height = 'auto';
+    } else {
+      document.querySelector('.services__list').style.height = ((document.querySelector('.services__list h3').clientHeight) * allButtons.length / 2) + ((document.querySelector('.services__list h3').clientHeight) / 100 * 60) + 'px';
+    }
+  };
 
   // Сначала закрываем все что открыто
   if (allButtons && allElements) {
@@ -277,12 +307,13 @@
     var toggleContent = function (evt) {
       evt.preventDefault();
       // Close if opened. Else open anything that is openes and open target
-      // if (evt.target.closest('.services__item').classList.contains('services__item--opened')) {
-      //   closeAll();
-      // } else {
-      closeAll();
-      evt.target.closest('.services__item').classList.add('services__item--opened');
-      // }
+      if (evt.target.closest('.services__item').classList.contains('services__item--opened')) {
+        closeAll();
+        resetHeight();
+      } else {
+        closeAll();
+        evt.target.closest('.services__item').classList.add('services__item--opened');
+      }
     };
 
     // Add eventListeners to all buttons
@@ -307,29 +338,42 @@
     }
   }
 
+  var openFirst = function () {
+    if (window.matchMedia('(max-width: 1023px)').matches && window.matchMedia('(min-width: 768px)').matches) {
+      var allElements = document.querySelectorAll('.services__item');
+      var yes = 0;
+      for (var i = 0; i < allElements.length; i++) {
+        if (allElements[i].classList.contains('services__item--opened')) {
+          yes++;
+        }
+      }
+      if (yes == false) {
+        allElements[0].classList.add('services__item--opened');
+      }
+    }
+  };
+
   var adjustHeight = function () {
     if (window.matchMedia('(max-width: 1023px)').matches && window.matchMedia('(min-width: 768px)').matches) {
       // var list = document.querySelectorAll('.services__list');
-      var height = document.querySelector('.services__item--opened').clientHeight;
-      // var h = list.style.height;
-      document.querySelector('.services__list').style.height = (height + 'px');
+      if (document.querySelector('.services__item--opened')) {
+        var height = document.querySelector('.services__item--opened').clientHeight;
+        // var h = list.style.height;
+        document.querySelector('.services__list').style.height = (height + 'px');
+      }
     }
   };
 
   var changeOrder = function () {
     if (window.matchMedia('(max-width: 1023px)').matches && window.matchMedia('(min-width: 768px)').matches) {
-      var currentElement = document.querySelector('.services__item--opened');
-      for (var i = 0; i < allElements.length; i++) {
-        var element = allElements[i];
-        element.style.order = '0';
+      if (document.querySelector('.services__item--opened')) {
+        var currentElement = document.querySelector('.services__item--opened');
+        for (var i = 0; i < allElements.length; i++) {
+          var element = allElements[i];
+          element.style.order = '0';
+        }
+        currentElement.style.order = '-1';
       }
-      currentElement.style.order = '-1';
-    }
-  };
-
-  var resetHeight = function () {
-    if (window.matchMedia('(min-width: 1024px)').matches || window.matchMedia('(max-width: 767px)').matches) {
-      document.querySelector('.services__list').style.height = '';
     }
   };
 
@@ -342,7 +386,13 @@
     }
   };
 
+  if (window.matchMedia('(max-width: 1767px)').matches) {
+    closeAll();
+  }
+
+  openFirst();
   window.addEventListener('resize', resetHeight);
+  window.addEventListener('resize', openFirst);
   window.addEventListener('resize', resetOrder);
   window.addEventListener('resize', changeOrder);
   window.addEventListener('resize', adjustHeight);
