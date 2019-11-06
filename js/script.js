@@ -297,9 +297,7 @@
     var closeAll = function () {
       for (var i = 0; i < allElements.length; i++) {
         var element = allElements[i];
-        if (element.classList.contains('services__item--opened')) {
-          element.classList.remove('services__item--opened');
-        }
+        element.classList.remove('services__item--opened');
       }
     };
 
@@ -392,7 +390,7 @@
 
   openFirst();
   window.addEventListener('resize', resetHeight);
-  window.addEventListener('resize', openFirst);
+  // window.addEventListener('resize', openFirst);
   window.addEventListener('resize', resetOrder);
   window.addEventListener('resize', changeOrder);
   window.addEventListener('resize', adjustHeight);
