@@ -449,7 +449,7 @@
       pagination: {
         el: '.swiper-pagination',
         dynamicBullets: true,
-        // clickable: true,
+        clickable: true,
       },
     });
   };
@@ -478,7 +478,7 @@
       pagination: {
         el: '.swiper-pagination',
         dynamicBullets: true,
-        // clickable: true,
+        clickable: true,
       },
     });
   };
@@ -541,7 +541,7 @@
       pagination: {
         el: '.advantages__buttons',
         dynamicBullets: true,
-        // clickable: true,
+        clickable: true,
       },
     });
   };
@@ -568,7 +568,7 @@
       pagination: {
         el: '.swiper-pagination',
         // dynamicBullets: true,
-        // clickable: true,
+        clickable: true,
       },
     });
 
